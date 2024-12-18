@@ -1,0 +1,29 @@
+﻿header{
+    background-color: rgb(0, 112, 205);
+}
+.nav-update {
+    display: flex;
+  
+    text-align: start;
+   margin-bottom:0px;
+}
+.nav-update ul{
+    margin-left:20%;
+}
+ul li{
+    margin-right:2%;
+  
+
+}
+ ul li a{
+    color:white;
+}
+footer{
+    height:150px;
+
+}
+*{
+    padding:0px;
+    margin:0px;
+    box-sizing:border-box;
+}

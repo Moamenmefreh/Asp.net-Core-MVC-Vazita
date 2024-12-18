@@ -1,0 +1,158 @@
+﻿@using Hayaat_Karima.Models
+@model IEnumerable<DoctorsTb>
+
+@{
+    ViewData["Title"] = "Detailsalldoctor";
+}
+
+
+<link href="~/css/Detailsheet.css" rel="stylesheet" />
+<section class="homepage m-0 mt-5">
+    
+ <div class="container">
+        <div class="datails-doctor w-100 m-auto ">
+            <form class="form-control d-flex align-content-sm-center m-auto" dir="rtl" asp-controller="Home" asp-action="Detailsalldoctor" method="post">
+                <div>
+                    <input type="text" name="specialName" list="special" id="special" placeholder="التخصص" class="form-control " />
+                    <datalist id="special">
+                        @foreach (var item in Model)
+                        {
+                            <option value="@item.SpecializatinTb.SpecializatinName"></option>
+                        }
+                    </datalist>
+                </div>
+                <div>
+                    <input type="text" name="regionName" id="level" list="regionName" class="form-control" placeholder="المركز" />
+                    <datalist id="regionName">
+                        @foreach (var item in Model)
+                        {
+                            <option value="@item.region.RegionName"></option>
+                        }
+                    </datalist>
+                </div>
+                <div class="div-doc">
+                    <input type="text" name="docName" id="Name" list="name" class="form-control" placeholder="الدكتور" />
+                    <datalist id="name">
+                        @foreach (var item in Model)
+                        {
+
+                            <option value="@item.DocName"></option>
+                        }
+                    </datalist>
+                </div>
+                <div class="search">
+                    <button type="submit" class="btn btn-danger form-control h-100 text-white"> <img src="~/images/search.svg" alt="Alternate Text" class="text-white" /> ابحث</button>
+                </div>
+            </form>
+
+
+        </div>
+
+    </div> 
+</section>
+
+<div class="datails-doctor w-100 mt-5">
+
+
+
+    <div class="container mt-5 "dir="rtl" >
+      
+            @foreach (var item in Model)
+            {
+           
+          <div class="row bg-white all-content mb-5">
+                <div class="w-50 mb-4 border-1 content">
+                    <div class="row mt-3">
+                        <p asp-for="@item.region.RegionName" class="col-4">مركز</p>
+                        <h4 class="col-8">@item.region.RegionName</h4>
+                    </div>
+                    <div class="row mt-3">
+                        <p asp-for="@item.DocName" class="col-4">الدكتور</p>
+                        <h4 class="col-8">@item.DocName</h4>
+                    </div>
+                    <div class="row mt-3 ">
+                        <p asp-for="@item.SpecializatinTb.SpecializatinName" class="col-4">التخصص</p>
+                        <h4 class="col-8">@item.SpecializatinTb.SpecializatinName</h4>
+                    </div>
+
+                </div>
+                <div class="booking w-50 h-100 p-3">
+
+
+     <div id="carouselExampleIndicators" class="carousel slide">
+
+                        <div class="carousel-inner text-center">
+                            <div class="carousel-item active ">
+                                <div class="row text-center">
+                                    @foreach(var itm in Model)
+                                    {
+                                        //<h2>@itm.AppointmentTB?.AppointmentId</h2>
+                                    }
+
+                                   
+
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="row">
+                                    <div class="book-day col-lg-3 col-sm-6 m-1 bg-white">
+                                        <h2 class="bg-primary">الثلاثاء</h2>
+                                        <h6>3m</h6>
+                                        <h6>3m</h6>
+                                        <h6>3m</h6>
+                                        <h6>3m</h6>
+                                        <h6>3m</h6>
+                                        <a class="btn btn-danger w-100 border" asp-controller="Pateint" asp-action="Index">
+                                            احجز
+                                        </a>
+                                    </div>
+                                    <div class="book-day col-lg-3 col-sm-6 m-1 bg-white">
+                                        <h2 class="bg-primary w-100">الاربعاء</h2>
+                                        <h6>3m</h6>
+                                        <h6>3m</h6>
+                                        <h6>3m</h6>
+                                        <h6>3m</h6>
+                                        <h6>3m</h6>
+                                        <a class="btn btn-danger w-100 border" asp-controller="Pateint"
+                                                asp-action="Booking">
+                                            احجز
+                                        </a>
+                                    </div>
+                                    <div class="book-day col-lg-3 col-sm-6 m-1 bg-white">
+                                        <h2 class="bg-primary">الخميس</h2>
+                                        <h6>3m</h6>
+                                        <h6>3m</h6>
+                                        <h6>3m</h6>
+                                        <h6>3m</h6>
+                                        <h6>3m</h6>
+                                        <a class="btn btn-danger w-100 border" asp-controller="Pateint"
+                                                asp-action="Booking">
+                                            احجز
+                                        </a>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                        <button class="carousel-control-prev " type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon bg-black" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                            <span class="carousel-control-next-icon bg-black" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+
+
+
+                </div>
+
+          </div>
+       
+            }
+      
+    </div>
+    </div>
+    

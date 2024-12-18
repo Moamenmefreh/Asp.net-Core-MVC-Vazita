@@ -1,0 +1,40 @@
+﻿@using Hayaat_Karima.Models
+@model IEnumerable<DoctorsTb>
+@{
+    ViewData["Title"] = "AllDoctors";
+}
+<link href="~/css/Dectors.css" rel="stylesheet" />
+<h1 class="bbg-light text-center">AllDoctors</h1>
+
+<div class="container">
+    <a asp-action="AddNewDoctor" asp-controller="Admin" class="btn btn-outline-primary m-5">Add New Doctor</a>
+    <table class="table-bordered table-hover table" dir="rtl">
+        <thead class="bg-primary" style="color:white">
+            <th>@Html.DisplayNameFor(x=>x.DocIdpk)</th>
+            <th>@Html.DisplayNameFor(x=>x.DocName)</th>
+            <th>@Html.DisplayNameFor(x=>x.DocPhoto)</th>
+            <th>@Html.DisplayNameFor(x=>x.DocPhone)</th>
+            <th>@Html.DisplayNameFor(x=>x.SpecializatinTb.SpecializatinName)</th>
+            <th>@Html.DisplayNameFor(x=>x.region.RegionName)</th>
+        <th class="fs-2">
+       Update &spades; Delete
+        </th>
+        </thead>
+        <tbody dir="rtl">
+            @foreach(var item in Model)
+            {
+                <tr>
+                    <td>@item.DocIdpk</td>
+                    <td>@item.DocName</td>
+                    <td>@item.DocPhoto</td>
+                    <td>@item.DocPhone</td>
+                    <td>@item.SpecializatinTb.SpecializatinName</td> 
+                    <td>@item.region.RegionName</td>
+                    <td class="m-1"><a asp-action="Update" style="margin-left:20%; margin-right:4%" asp-controller="Admin" class="btn btn-warning" asp-route-id="@item.DocIdpk">Update</a>
+                        <a asp-action="Delete" asp-controller="Admin" class="btn btn-danger" asp-route-id="@item.DocIdpk">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

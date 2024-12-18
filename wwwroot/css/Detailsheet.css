@@ -1,0 +1,96 @@
+﻿body {
+    background-color: rgb(226, 230, 234);
+}
+*{
+    padding:0px;
+    margin:0px;
+    box-sizing:border-box;
+}
+
+/*.info_doctor {
+    margin-top: 10%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    border-radius: 20px;
+    border-bottom: 1px solid black;
+}
+*/
+.info_doctor .top .right {
+    padding-right: 5%;
+    border-left: 2px solid black;
+    padding-left: 25%;
+}
+
+    .info_doctor .top .left {
+        padding-left: 5%;
+    }
+
+.contact-doc {
+}
+.datails-doctor .container .content{
+   
+    transition:.5s ease;
+    border-radius:10px;
+}
+    .datails-doctor .container .content {
+     padding:3%;
+     color:black;
+     
+    }
+
+
+    .datails-doctor form div {
+        width: 28%;
+        margin: 1%;
+        position: relative;
+    }
+
+        .datails-doctor form div label {
+            position: absolute;
+            outline: none;
+        }
+
+        .datails-doctor form div input {
+            height: 60px;
+        }
+
+        .datails-doctor form div a {
+            display: inline-block;
+            height: 60px;
+            line-height: 60px;
+        }
+
+        .datails-doctor form div.search {
+            width: 10%;
+            margin: 1% 0px;
+            height: 60px;
+        }
+
+.book-day{
+    padding:0px;
+    text-align:center;
+    box-shadow:0px 0px 1px 0px black;
+}
+
+.book-day button{
+    width:100%;
+    border:none;
+ height:50px;
+}
+.carousel-control-next {
+    right: -17%;
+}
+.datails-doctor .container .bg-white:hover {
+    background-color: black;
+    z-index: 9999;
+}
+.book-day{
+    border-radius:10px;
+    overflow:hidden;
+    margin-right:10px;
+}
+.book-day h2{
+   
+    padding:5% 0px;
+}

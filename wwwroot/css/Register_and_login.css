@@ -1,0 +1,11 @@
+﻿body {
+}
+h2.h2-register{
+    color:white;
+    border-radius:5px;
+}
+h2.h2-Login{
+color:white;
+border-top-left-radius:5px;
+border-top-right-radius:5px;
+}

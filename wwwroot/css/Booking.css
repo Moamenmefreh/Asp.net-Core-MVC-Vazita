@@ -1,0 +1,25 @@
+﻿body {
+}
+form h2{
+    height:60px;
+    color:white;
+}
+form{
+    border-radius:50px;
+    overflow:hidden;
+    border:none;
+}
+form input{
+    height:50px;
+  
+    width:90%;
+    margin:auto;
+}
+    form .row{
+        padding-right:20%;
+    }
+  
+    form a {
+        height: 50px;
+        margin: 0px 5%;
+    }

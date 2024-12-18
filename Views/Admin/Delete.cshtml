@@ -1,0 +1,36 @@
+﻿@using Hayaat_Karima.Models
+@model DoctorsTb
+@{
+    ViewData["Title"] = "Delete";
+    SelectList spectailoption = new SelectList(ViewBag.Specialization, "SpecializatinIdpk", "SpecializatinName");
+    SelectList regionoption = new SelectList(ViewBag.Region, "PkregionId", "RegionName");
+
+}
+<link href="~/css/Dectors.css" rel="stylesheet" />
+<h1 class="text-center bg-primary w-50 m-auto mt-5 p-2">حذف بيانات الدكتور </h1>
+
+
+<form asp-action="SaveDelete" asp-controller="Admin" method="post" class="form-control w-50 m-auto">
+    <label asp-for="DocIdpk" class="mt-2 mb-1" hidden>الرقم التسلسلي</label>
+    <input asp-for="DocIdpk" class="form-control" hidden />
+    <label asp-for="DocName" class="mt-2 mb-1">الدكتور</label>
+    <input asp-for="DocName" class="form-control" />
+    <label asp-for="DocPhone" class="mt-2 mb-1">الموبيل</label>
+    <input asp-for="DocPhone" class="form-control" />
+    <label asp-for="DocPhoto" class="mt-2 mb-1">صورة الدكتور</label>
+    <input asp-for="DocPhoto" class="form-control" type="file" />
+   
+    <label asp-for="SpecializationIdfk" class="mt-2 mb-1">التخصص</label>
+    <select class="form-control" asp-for="SpecializationIdfk" asp-items="spectailoption">
+        <option value="0">-- اختار التخصص --</option>
+    </select>
+
+    <label asp-for="RegionId" class="mt-2 mb-1">المركز</label>
+    <select class="form-control" asp-for="RegionId" asp-items="regionoption">
+        <option value="0">-- اختار مركزك --</option>
+
+    </select>
+    <input type="submit" class="btn btn-success m-3" value="حذف بيانات الدكتور">
+    <button asp-action="AllDoctors" asp-controller="Admin" class="text-center btn btn-primary m-auto m-3 p-2 border-0">الرجوع الي قائمة الدكاتره</button>
+
+</form>
